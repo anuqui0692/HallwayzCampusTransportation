@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notification</title>
+
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
+</head>
+
+<body class="chat-page">
+
+<!-- HEADER -->
+<div class="chat-header">
+
+  <button class="chat-back-btn"
+    onclick="window.location.href='notification.html'">
+    ←
+  </button>
+
+  <h2>Notification</h2>
+
+</div>
+
+<!-- CONTENT -->
+<div class="chat-box" id="notificationView">
+
+</div>
+
+<script>
+document.addEventListener(
+  "DOMContentLoaded",
+  loadNotificationView
+);
+</script>
+
+</body>
+</html>

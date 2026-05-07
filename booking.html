@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Ride</title>
+<link rel="stylesheet" href="style.css">
+
+<!-- KEEP ONLY ONE SCRIPT LOAD -->
+<script src="script.js"></script>
+</head>
+
+<body class="booking-page">
+
+<!-- TOP GREEN AREA -->
+<div class="booking-top">
+  <img src="images/photo_6332540721310666853_x-removebg-preview 1.png"
+       class="booking-logo">
+</div>
+
+<!-- ================= BOOKING SECTION ================= -->
+<div class="booking-container" id="bookingSection">
+<br><br>
+  <h2 class="choose-title">Choose your Ride</h2>
+
+  <p id="destinationText" class="destination-text"></p><br>
+
+  <!-- RIDE LIST -->
+  <div class="ride-list">
+
+    <!-- TUKTUK -->
+    <div class="ride-card"
+         id="tuktukCard"
+         onclick="selectRide('Tuktuk', 15, 'tuktukCard')">
+
+        <div class="ride-left">
+          <h3>Tuk - tuk</h3>
+          <p>₱15/km</p>
+        </div>
+
+        <div class="ride-right">
+          🛺
+        </div>
+    </div>
+
+    <!-- MOTOR -->
+    <div class="ride-card"
+         id="motorCard"
+         onclick="selectRide('Motorcycle', 10, 'motorCard')">
+
+        <div class="ride-left">
+          <h3>Motorcycle</h3>
+          <p>₱10/km</p>
+        </div>
+
+        <div class="ride-right">
+          🏍️
+        </div>
+    </div>
+
+  </div>
+
+  <!-- ✅ FIXED BUTTON -->
+  <button class="confirm-btn" onclick="confirmRide()">
+    Confirm Booking
+  </button>
+
+</div>
+
+<!-- ================= FARE SUMMARY ================= -->
+<div class="booking-container" id="fareSummary" style="display:none;">
+<br>
+  <h2 class="choose-title">Ride Confirmed</h2>
+
+  <div class="destination-text">
+    <p><strong>From:</strong> <span id="fromText"></span></p>
+    <p><strong>To:</strong> <span id="toText"></span></p>
+    <p><strong>Distance:</strong> <span id="kmText"></span> km</p><br>
+  </div>
+
+  <div class="ride-list">
+    <div class="ride-card selected">
+      <div class="ride-left">
+        <h3 id="rideText"></h3>
+        <p>Total Fare</p>
+      </div>
+
+      <div class="ride-right">
+        <h2 id="fareText">₱0</h2>
+      </div>
+    </div>
+  </div>
+
+<button class="done-btn" onclick="finishBooking()">
+  Done
+</button>
+</div>
+
+<!-- NAVIGATION -->
+<div class="bottom-nav">
+  <div class="nav-item" onclick="goTo('home')">🏠<p>Home</p></div>
+  <div class="nav-item" onclick="goTo('message')">💬<p>Message</p></div>
+  <div class="nav-item" onclick="goTo('profile')">👤<p>Profile</p></div>
+  <div class="nav-item" onclick="goTo('notification')">🔔<p>Notification</p></div>
+</div>
+
+<script>
+/* ================= LOAD ROUTE ================= */
+const from = localStorage.getItem("fromLocation");
+const to = localStorage.getItem("toLocation");
+const km = localStorage.getItem("distanceKM") || 1;
+
+if (document.getElementById("destinationText")) {
+  document.getElementById("destinationText").innerHTML =
+    `<strong>From:</strong> ${from}<br>
+     <strong>To:</strong> ${to}<br>
+     <strong>Distance:</strong> ${km} km`;
+}
+
+/* ================= RIDE SELECTION ================= */
+let selectedRide = null;
+let selectedPrice = 0;
+
+function selectRide(type, rate, id) {
+
+  document.querySelectorAll(".ride-card")
+    .forEach(card => card.classList.remove("selected"));
+
+  document.getElementById(id).classList.add("selected");
+
+  selectedRide = type;
+  selectedPrice = km * rate;
+}
+
+/* ================= FIXED CONFIRM ================= */
+function confirmRide() {
+
+  if (!selectedRide) {
+    alert("Please select a ride.");
+    return;
+  }
+
+  document.getElementById("fromText").innerText = from;
+  document.getElementById("toText").innerText = to;
+  document.getElementById("kmText").innerText = km;
+  document.getElementById("rideText").innerText = selectedRide;
+  document.getElementById("fareText").innerText = "₱" + selectedPrice;
+
+  document.getElementById("bookingSection").style.display = "none";
+  document.getElementById("fareSummary").style.display = "block";
+}
+
+</script>
+
+</body>
+</html>

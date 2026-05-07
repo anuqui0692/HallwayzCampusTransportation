@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Messages</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="messages-page">
+
+<!-- TOP BAR -->
+<div class="msg-header">
+
+  <button class="msg-back-btn" onclick="goTo('home')">
+    ←
+  </button>
+
+  <h2>Messages</h2>
+
+</div>
+
+<!-- MESSAGE LIST -->
+<div class="sms-container" id="messageList"></div>
+
+<button class="new-chat-btn" onclick="createConversation()">
+  +
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>

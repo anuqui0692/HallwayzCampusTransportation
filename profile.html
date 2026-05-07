@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Profile</title>
+</head>
+
+<body class="profile-page">
+
+<!-- =========================================================
+     TOP BAR
+========================================================= -->
+<div class="profile-top">
+
+  <button class="back-btn-profile" onclick="goTo('home')">
+    ←
+  </button>
+
+  <h2>Profile</h2>
+
+  <button class="edit-btn" onclick="toggleEdit()">
+    Edit
+  </button>
+
+</div>
+
+<!-- =========================================================
+     PROFILE CARD
+========================================================= -->
+<div class="profile-card">
+
+  <!-- =======================================================
+       PROFILE IMAGE SECTION
+  ======================================================= -->
+  <div class="profile-pic-section">
+
+    <div class="profile-circle" onclick="handleProfileClick()">
+
+      <img id="profilePreview" src="" alt="">
+
+      <span id="profilePlaceholder">+</span>
+
+    </div>
+
+    <input
+      type="file"
+      id="profileUpload"
+      accept="image/*"
+      hidden
+      onchange="loadProfileImage(event)"
+    >
+
+  </div>
+
+  <!-- =======================================================
+       PROFILE PHOTO PANEL
+  ======================================================= -->
+  <div class="profile-panel" id="profilePanel">
+
+    <button onclick="chooseProfilePicture()">
+      Choose Profile Picture
+    </button>
+
+    <button onclick="viewProfilePicture()">
+      See Profile Picture
+    </button>
+
+    <button class="delete-photo-btn" onclick="deleteProfilePicture()">
+      Delete Profile Picture
+    </button>
+
+  </div>
+
+  <!-- =======================================================
+       IMAGE VIEWER
+  ======================================================= -->
+  <div class="image-viewer" id="imageViewer">
+
+    <span class="close-viewer" onclick="closeViewer()">✕</span>
+
+    <img id="viewerImage" src="" alt="Profile">
+
+  </div>
+
+  <!-- =======================================================
+       PROFILE FIELDS
+  ======================================================= -->
+  <div class="profile-fields">
+
+    <input id="name" placeholder="Full Name" disabled>
+    <input id="username" placeholder="Username" disabled>
+    <input id="email" placeholder="Email" disabled>
+    <input id="password" type="password" placeholder="Password" disabled>
+    <input id="phone" placeholder="Phone" disabled>
+
+  </div>
+
+  <!-- =======================================================
+       SAVE BUTTON
+  ======================================================= -->
+  <button class="save-btn" onclick="saveProfile()">
+    Save Changes
+  </button>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

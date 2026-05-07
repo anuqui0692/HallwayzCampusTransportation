@@ -1,0 +1,1532 @@
+/* ================= ROOT VARIABLES ================= */
+:root {
+  --white-color: #FFFDFD;
+  --green-color: #2e7d32;
+  --green-dark: #1b5e20;
+  --bg-top: #89D957;
+  --bg-bottom: #C9E265;
+}
+
+/* ================= RESET ================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ================= BODY ================= */
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  background: linear-gradient(180deg, var(--bg-top), var(--bg-bottom));
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* ================= HEADER ================= */
+/* DEFAULT HEADER (other pages) */
+.header {
+  background: transparent;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+
+/* MAP PAGE HEADER ONLY */
+.map-page .header {
+  width: fit-content;
+  margin: 10px auto 0 auto;
+  padding: 8px 18px;
+  border-radius: 20px;
+  background: rgba(46, 125, 50, 0.85);
+  font-size: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* ================= LOGO ================= */
+.logo {
+  width: 350px;
+  margin-bottom: 10px;
+  height: auto;
+  display: block;
+}
+
+/* ================= BUTTONS ================= */
+.btn {
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+  width: 90%;
+  max-width: 450px;
+  margin: 10px 0;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn-light,
+.btn-dark {
+  background-color: var(--white-color);
+  color: var(--green-color);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+h1 {
+  color: var(--white-color);
+  font-size: 3rem;
+  margin-top: 10px;
+}
+
+.logo {
+  width: 350px;
+  margin: 10px auto;
+}
+
+.btn:active {
+  background-color: var(--green-color);
+  color: white;
+  transform: scale(0.98);
+}
+
+/* ================= FORM ================= */
+.form-card {
+  background: #f4f1ef;
+  padding: 30px 25px;
+  border-radius: 30px;
+  width: 90%;
+  max-width: 420px;
+  margin: auto;
+  margin-top: 30px;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.form-card h2 {
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.subtext {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  background: #d9d3cf;
+  border-radius: 30px;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+}
+
+.input-group input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  font-size: 14px;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 14px;
+  border-radius: 30px;
+  border: none;
+  margin-top: 20px;
+  background: #d6cfc9;
+  color: #2e2e2e;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ================= SEARCH BAR ================= */
+.search-bar {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+
+.search-bar input {
+  padding: 12px 15px;
+  width: 100%; /* ensures equal width */
+  border: none;
+  outline: none;
+  border-radius: 25px;
+  background: #ffffff;
+  font-size: 16px;
+
+  box-sizing: border-box; /* important fix */
+}
+
+.search-bar button {
+  padding: 12px 18px;
+  border: none;
+  background: var(--green-color);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 0 25px 25px 0;
+  transition: 0.3s;
+}
+
+.search-bar button:hover {
+  background: var(--green-dark);
+}
+
+/* ================= MAP ================= */
+iframe {
+  width: 100%;
+  height: calc(100vh - 100px);
+  border: none;
+}
+
+/* ================= MAP CONTROLS ================= */
+.map-controls {
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  gap: 10px;
+}
+
+.map-controls button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 20px;
+  background: white;
+  color: var(--green-color);
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.map-controls button:hover {
+  background: var(--green-color);
+  color: white;
+}
+
+/* ================= BOTTOM NAV ================= */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  background: #6b8e23;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1000;
+}
+
+.nav-item {
+  text-align: center;
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.nav-item .icon {
+  display: block;
+  font-size: 22px;
+  margin-bottom: 3px;
+}
+
+.nav-item:hover {
+  opacity: 0.8;
+}
+
+/* ================= SUBMIT BUTTON INTERACTION ================= */
+.btn-submit {
+  background: transparent;
+  color: #333;
+  border: 2px solid #333;
+  margin-top: 30px;
+  padding: 12px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.btn-submit:hover {
+  background: #e8f5e9;
+  border-color: var(--green-color);
+  color: var(--green-color);
+}
+
+/* CLICK EFFECT */
+.btn-submit:active {
+  background: var(--green-color);
+  color: white;
+  transform: scale(0.97);
+}
+
+/* JS TRIGGERED CLASS */
+.btn-submit.clicked {
+  background: var(--green-color);
+  color: white;
+  border-color: var(--green-color);
+}
+
+/* BOOK BUTTON */
+.book-btn {
+  position: absolute;
+  top: 130px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  background: #2e7d32;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1000;
+  transition: 0.3s;
+}
+
+.book-btn:hover {
+  background: #1b5e20;
+}
+
+/* RIDE OPTIONS */
+.ride-option {
+  background: #f1f1f1;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.ride-option:hover {
+  background: #c8e6c9;
+}
+
+.search-bar.vertical {
+  flex-direction: column;
+  gap: 8px;
+}
+
+.search-bar.vertical input {
+  width: 260px;
+  border-radius: 25px;
+}
+
+.search-bar.vertical button {
+  width: 100%;
+  border-radius: 25px;
+}
+
+/* ================= BOOK BUTTON ================= */
+.book-btn {
+  position: absolute;
+  top: 190px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 350px;
+  padding: 14px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg, #2e7d32, #66bb6a);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* ================= UPDATED SEARCH LAYOUT ================= */
+.search-bar {
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ================= SEARCH LAYOUT ================= */
+.search-container {
+  position: absolute;
+  top: 180px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;              
+  width: 95%;           
+  z-index: 1000;
+}
+
+.from-box input,
+.to-box input {
+  height: 36px;
+  padding: 0 8px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  font-size: 12px;
+  width:100%;
+}
+
+/* TO (CENTER GROUP) */
+.to-box {
+  display: flex;
+  gap: 5px;
+  width: 40%;
+}
+
+.to-box input {
+  flex: 1; /* makes input same size as FROM */
+}
+
+/* SEARCH ROUTE BUTTON */
+.route-btn {
+  height:36px;
+  padding: 0;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #2e7d32, #66bb6a);
+  color: white;
+  font-weight: bold;
+  font-size: 11px;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.from-box,
+.to-box {
+  width: 50%;   /* equal size for inputs */
+}
+
+.route-btn {
+  width: 50px;  /* keep button smaller */
+}
+
+@media (max-width: 480px) {
+  .search-container {
+    max-width: 100%;
+    gap: 4px;
+  }
+
+  .from-box {
+    width: 30%;
+  }
+
+  .to-box {
+    width: 45%;
+  }
+
+  .route-btn {
+    width: 25%;
+    font-size: 10px;
+  }
+}
+
+/* BOOK BUTTON (UNDER) */
+.book-btn {
+  position: absolute;
+  top: 240px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 400px;
+  padding: 14px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg, #2e7d32, #66bb6a);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.icon {
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.form-card h2 {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.subtext {
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.subtext a {
+  color: #4caf50;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.route-notif {
+  position: absolute;
+  top: 140px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffebee;
+  color: #c62828;
+  padding: 10px 18px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+  z-index: 2000;
+}
+
+/* SHOW STATE */
+.route-notif.show {
+  opacity: 1;
+}
+
+.book-btn {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+/* ================= BOOKING PAGE ================= */
+
+.booking-page {
+  min-height: 100vh;   /* FIX */
+  overflow-y: auto;    /* allow scroll if needed */
+  background: linear-gradient(180deg, #63d114, #b7e85d);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.booking-logo {
+  width: 260px;
+  margin-top: 0px;  /* ⬅️ pushes logo higher */
+}
+
+/* WHITE CARD */
+.booking-container {
+  background: #f7f7f7;
+  width: 90%;
+  max-width: 420px;
+  border-radius: 25px;
+  margin-top: 5px;
+  padding: 8px 12px;
+  height: auto;          /* FIX: allow natural growth */ 
+  max-height: 75vh;      /* keeps it within screen */
+  display: flex;
+  flex-direction: column;
+  position: relative;   /* ⬅️ important */
+  padding-bottom: 60px;  /* ⬅️ space for button */
+}
+
+.booking-top {
+  width: 100%;
+  margin-top: -70px;   /* move logo higher */
+  margin-bottom: 10px; /* ⬅️ adds space from white card */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* TITLE */
+.choose-title {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.destination-text {
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+/* RIDE LIST */
+.ride-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* RIDE CARD */
+.ride-card {
+  width: 100%;
+  min-height: 50px;
+  background: #e8dddd;
+  border-radius: 18px;
+  margin-bottom: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 30px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.ride-card:hover {
+  transform: translateY(-3px);
+}
+
+.ride-card.selected {
+  background: linear-gradient(135deg, #2e7d32, #66bb6a);
+  color: white;
+}
+
+.ride-left h3 {
+  font-size: 20px;
+}
+
+.ride-left p {
+  font-size: 15px;
+}
+
+.ride-right {
+  font-size: 50px;
+}
+
+.ride-right h2 {
+  font-size: 25px;   /* ⬅️ smaller (adjust if needed) */
+  font-weight: bold;
+}
+
+/* CONFIRM BUTTON (FIXED) */
+.confirm-btn {
+  width: 100%;
+  padding: 13px;
+  font-size: 15px;
+  background: linear-gradient(135deg, #2e7d32, #66bb6a);
+  color: white;
+  border: none;
+  border-radius: 35px;
+  margin-top: 5px;
+}
+
+.done-btn {
+  position: absolute;
+  bottom: 15px;   /* distance from bottom */
+  right: 15px;    /* distance from right */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 35px;
+  background: #ccc;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* CLICK EFFECT */
+.done-btn.active {
+  background-color: var(--green-color);
+  color: white;
+  transform: scale(0.98);
+}
+
+/* CHAT */
+.chat-container {
+  width: 100%;
+  max-width: 420px;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-box {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.msg {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 15px;
+  max-width: 70%;
+}
+
+.sent {
+  background: #8bc34a;
+  align-self: flex-end;
+}
+
+.chat-input {
+  display: flex;
+  gap: 5px;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+}
+
+.chat-input button {
+  padding: 10px;
+  border-radius: 50%;
+}
+
+/* PROFILE INPUTS */
+.profile-card input {
+  width: 100%;
+  margin: 8px 0;
+  padding: 12px;
+  border-radius: 20px;
+  border: none;
+}
+
+.profile-card button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 20px;
+  background: green;
+  color: white;
+}
+
+.header {
+  width: 100%;
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* ================= SMS CLEAN UI ================= */
+
+.sms-container {
+  padding: 15px;
+  max-width: 500px;
+  margin: auto;
+}
+
+/* CHAT LIST ITEM */
+.sms-item {
+  background: #fff;
+  padding: 15px;
+  border-radius: 18px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  cursor: pointer;
+}
+
+.sms-item:hover {
+  transform: scale(1.01);
+}
+
+.sms-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sms-name {
+  font-weight: bold;
+}
+
+.sms-preview {
+  font-size: 13px;
+  color: gray;
+  margin-top: 5px;
+}
+
+/* FLOATING BUTTON (NEW MESSAGE) */
+.fab-btn {
+  position: fixed;
+  bottom: 85px;
+  right: 20px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: none;
+  background: #2e7d32;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* CHAT HEADER */
+.chat-top-bar {
+  display: flex;
+  align-items: center;
+  background: #2e7d32;
+  color: white;
+  padding: 15px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* BACK BUTTON */
+.back-btn {
+  margin-right: 10px;
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* CHAT BUBBLES */
+.msg {
+  padding: 10px 14px;
+  margin: 6px 10px;
+  border-radius: 18px;
+  max-width: 70%;
+}
+
+.sent {
+  background: #66bb6a;
+  color: white;
+  align-self: flex-end;
+}
+
+.received {
+  background: #e0e0e0;
+  align-self: flex-start;
+}
+
+/* INPUT */
+.chat-input-area {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  background: white;
+}
+
+.chat-input-area input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+}
+
+.chat-input-area button {
+  width: 45px;
+  border-radius: 50%;
+  border: none;
+  background: #2e7d32;
+  color: white;
+}
+
+/* ================= SMS CLEAN UI ================= */
+
+.sms-container {
+  padding: 15px;
+  max-width: 500px;
+  margin: auto;
+}
+
+/* CHAT LIST ITEM */
+.sms-item {
+  background: #fff;
+  padding: 15px;
+  border-radius: 18px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  cursor: pointer;
+}
+
+.sms-item:hover {
+  transform: scale(1.01);
+}
+
+.sms-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sms-name {
+  font-weight: bold;
+}
+
+.sms-preview {
+  font-size: 13px;
+  color: gray;
+  margin-top: 5px;
+}
+
+/* FLOATING BUTTON (NEW MESSAGE) */
+.fab-btn {
+  position: fixed;
+  bottom: 85px;
+  right: 20px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: none;
+  background: #2e7d32;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* CHAT HEADER */
+.chat-top-bar {
+  display: flex;
+  align-items: center;
+  background: #2e7d32;
+  color: white;
+  padding: 15px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* BACK BUTTON */
+.back-btn {
+  margin-right: 10px;
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* CHAT BUBBLES */
+.msg {
+  padding: 10px 14px;
+  margin: 6px 10px;
+  border-radius: 18px;
+  max-width: 70%;
+}
+
+.sent {
+  background: #66bb6a;
+  color: white;
+  align-self: flex-end;
+}
+
+.received {
+  background: #e0e0e0;
+  align-self: flex-start;
+}
+
+/* INPUT */
+.chat-input-area {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  background: white;
+}
+
+.chat-input-area input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+}
+
+.chat-input-area button {
+  width: 45px;
+  border-radius: 50%;
+  border: none;
+  background: #2e7d32;
+  color: white;
+}
+
+/* ================= MESSAGES DESIGN ================= */
+
+.messages-page,
+.chat-page {
+  background: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* TOP HEADER */
+.msg-header,
+.chat-header {
+  width: 100%;
+  height: 85px;
+  background: #a8dc82;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.msg-header h2,
+.chat-header h2 {
+  flex: 1;
+  text-align: center;
+  font-size: 36px;
+  font-family: serif;
+  color: white;
+  margin-right: 40px;
+}
+
+/* BACK BUTTON */
+.msg-back-btn,
+.chat-back-btn {
+  border: none;
+  background: transparent;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+/* MESSAGE LIST CONTAINER */
+.sms-container {
+  width: 100%;
+  max-width: 430px;
+  padding: 20px 15px 100px;
+  margin-top: 8px;
+}
+
+/* CHAT ITEM */
+.sms-item {
+  background: #ffffff;
+  padding: 14px 12px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  border-radius: 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.sms-item * {
+  text-align: left;
+}
+
+
+/* HOVER EFFECT */
+.sms-item:hover {
+  transform: scale(1.01);
+}
+
+/* LEFT SIDE */
+.sms-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* AVATAR */
+.sms-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #305217;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+/* NAME */
+.sms-name {
+  font-size: 15px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* PREVIEW */
+.sms-preview {
+  font-size: 12px;
+  color: #999;
+  margin-top: 2px;
+}
+
+/* DELETE BTN */
+.delete-btn {
+  border: none;
+  background: transparent;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* ================= CHAT PAGE ================= */
+
+.chat-box {
+  width: 100%;
+  max-width: 430px;
+  flex: 1;
+  padding: 20px 15px 100px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* BUBBLES */
+.msg {
+  max-width: 65%;
+  padding: 12px 18px;
+  margin: 8px 0;
+  border-radius: 18px;
+  font-size: 16px;
+  position: relative;
+}
+
+/* SENT */
+.sent {
+  align-self: flex-end;
+  background: #6fa14a;
+  color: rgb(255, 255, 255);
+}
+
+/* RECEIVED */
+.received {
+  align-self: flex-start;
+  background: #beec9d;
+  color: black;
+}
+
+/* INPUT AREA */
+.chat-bottom {
+  position: fixed;
+  bottom: 15px;
+  width: 90%;
+  max-width: 430px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* INPUT */
+.chat-bottom input {
+  flex: 1;
+  height: 45px;
+  border: none;
+  border-radius: 25px;
+  padding: 0 20px;
+  background: #ebe6e2;
+  outline: none;
+  font-size: 16px;
+}
+
+/* CREATE MESSAGE BUTTON */
+.new-chat-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border: none;
+  border-radius: 25px;
+  padding: 14px 22px;
+  background: #497c24;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* SEND BUTTON */
+.send-btn {
+  height: 45px;
+  padding: 0 18px;
+  border: none;
+  border-radius: 25px;
+  background: #4e802b;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+}
+/* ================= PROFILE PAGE ================= */
+.profile-page {
+  justify-content: flex-start;
+  padding-top: 20px;
+}
+
+/* TOP BAR */
+.profile-top {
+  width: 90%;
+  max-width: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.profile-top h2 {
+  color: white;
+  font-size: 28px;
+}
+
+/* BACK BUTTON */
+/* BACK BUTTON */
+.back-btn-profile {
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.back-btn-profile:hover {
+  opacity: 0.8;
+}
+
+/* EDIT BUTTON */
+.edit-btn {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 20px;
+  background: white;
+  color: #2e7d32;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.edit-btn:hover {
+  transform: scale(1.05);
+}
+
+/* PROFILE CARD */
+.profile-card {
+  width: 85%;
+  max-width: 420px;
+  background: #f7f7f7;
+  border-radius: 30px;
+  padding: 30px 20px 25px;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* PROFILE IMAGE */
+.profile-pic-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.profile-circle {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: #d9d9d9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  border: 4px solid #66bb6a;
+}
+
+.profile-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+}
+
+#profilePlaceholder {
+  font-size: 40px;
+  color: #666;
+}
+
+.upload-text {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #777;
+}
+
+/* INPUTS */
+.profile-fields {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-fields input {
+  width: 85%;
+  padding: 12px 15px;
+  margin-bottom: 12px;
+  border: none;
+  border-radius: 20px;
+  background: #e7e7e7;
+  outline: none;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+.profile-fields input:focus {
+  background: #dff3e1;
+}
+
+/* DISABLED LOOK */
+.profile-fields input:disabled {
+  opacity: 0.7;
+}
+
+/* SAVE BUTTON */
+.save-btn {
+  width: 85%;
+  padding: 13px;
+  border: none;
+  border-radius: 25px;
+  margin-top: 10px;
+  background: linear-gradient(135deg, #2e7d32, #66bb6a);
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.save-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* ================= PROFILE PANEL ================= */
+
+.profile-panel {
+  position: fixed;
+  bottom: -300px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 500px;
+  background: rgb(52, 129, 46);
+  border-radius: 25px 25px 0 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 5000;
+  transition: 0.3s ease;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+}
+
+.profile-panel.show {
+  bottom: 0;
+}
+
+.profile-panel button {
+  border: none;
+  padding: 14px;
+  border-radius: 18px;
+  background: #f1f1f1;
+  color: #2e7d32;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.profile-panel button:hover {
+  background: #e0e0e0;
+}
+
+.delete-photo-btn {
+  color: #d32f2f;
+}
+
+/* ================= IMAGE VIEWER ================= */
+
+.image-viewer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 6000;
+}
+
+.image-viewer img {
+  width: 90%;
+  max-width: 400px;
+  border-radius: 20px;
+}
+
+.image-viewer.show {
+  display: flex;
+}
+
+.close-viewer {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* ================= THANK YOU PAGE ================= */
+
+.thankyou-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #63d114, #b7e85d);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.thankyou-logo {
+  width: 250px;
+  margin-bottom: 20px;
+}
+
+.thankyou-card {
+  width: 90%;
+  max-width: 400px;
+  background: #f7f7f7;
+  border-radius: 30px;
+  padding: 40px 25px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.thankyou-title {
+  font-size: 42px;
+  color: #2e7d32;
+  margin-bottom: 15px;
+}
+
+.thankyou-text {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.home-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #2e7d32, #66bb6a);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.home-btn:hover {
+  transform: translateY(-2px);
+}
+
+.home-btn:active {
+  transform: scale(0.98);
+}
+
+/* ================= NOTIFICATION PAGE ================= */
+
+.notification-page {
+  background: #f5f5f5;
+  text-align: left;
+}
+
+/* notification card */
+.notif-item {
+  background: #fff;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  font-size: 14px;
+  color: #333;
+  text-align: left;
+}
+
+.notif-item * {
+  text-align: left;
+}
+
+/* container spacing fix */
+#notifList {
+  width: 100%;
+  max-width: 430px;
+  padding: 20px 15px 100px;
+}
+
+/* EMPTY */
+.empty-notif {
+  text-align: center;
+  margin-top: 50px;
+  color: gray;
+  font-size: 14px;
+}
+
+/* UNREAD */
+.unread-notif {
+  border-left: 5px solid #2e7d32;
+  background: #f3ffef;
+}
+
+/* VIEW PAGE */
+.notif-view-card {
+  background: white;
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 25px;
+  border-radius: 25px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.notif-view-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+
+.notif-view-time {
+  font-size: 12px;
+  color: gray;
+  margin-bottom: 20px;
+}
+
+.notif-view-message {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333;
+}
+

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PSAU Campus Map</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="header">PSAU Campus Map</div>
+
+  <!-- SEARCH -->
+<div class="search-container">
+
+  <!-- LEFT: FROM -->
+  <div class="from-box">
+    <input type="text" id="fromInput" placeholder="From">
+  </div>
+
+  <!-- MIDDLE: TO + BUTTON -->
+  <div class="to-box">
+    <input type="text" id="searchInput" placeholder="To (Destination)">
+    
+  <button class="route-btn" onclick="searchRoute()">
+    🔍
+  </button>
+
+  </div>
+
+</div>
+
+<!-- BOOK BUTTON -->
+<button class="book-btn" onclick="goToBooking()">Book Ride</button>
+
+  <!-- MAP -->
+  <div id="routeNotif" class="route-notif">
+  Please enter both From and To locations first.
+</div>
+
+  <iframe
+    src="https://www.google.com/maps/d/embed?mid=1Smr5SoQFt-Xq27O6535IdKbEZGzrz9w"
+    width="100%"
+    height="200">
+  </iframe>
+
+  <!-- NAV -->
+  <div class="bottom-nav">
+    <div class="nav-item" onclick="goTo('home')">🏠<p>Home</p></div>
+    <div class="nav-item" onclick="goTo('message')">💬<p>Message</p></div>
+    <div class="nav-item" onclick="goTo('profile')">👤<p>Profile</p></div>
+    <div class="nav-item" onclick="goTo('notification')">🔔<p>Notification</p></div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

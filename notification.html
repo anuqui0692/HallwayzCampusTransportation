@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notifications</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="notification-page">
+
+<!-- HEADER -->
+<div class="msg-header">
+  <button class="msg-back-btn" onclick="goTo('home')">←</button>
+  <h2>Notifications</h2>
+</div>
+
+<!-- NOTIFICATION LIST -->
+<div class="sms-container" id="notifList">
+
+<script src="script.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", loadNotifications);
+</script>
+
+</body>
+</html>
