@@ -22,8 +22,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  padding-top: 60px;
+  justify-content: center;
   text-align: center;
 }
 
@@ -50,25 +49,12 @@ body {
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
-.main-content {
-  margin-top: -20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
 /* ================= LOGO ================= */
 .logo {
   width: 350px;
+  margin-bottom: 10px;
   height: auto;
   display: block;
-  position: relative;
-  top: -70px;
-}
-
-h1 {
-  margin-top: -30px;
 }
 
 /* ================= BUTTONS ================= */
@@ -102,6 +88,11 @@ h1 {
   color: var(--white-color);
   font-size: 3rem;
   margin-top: 10px;
+}
+
+.logo {
+  width: 350px;
+  margin: 10px auto;
 }
 
 .btn:active {
@@ -1540,3 +1531,4 @@ iframe {
   line-height: 1.6;
   color: #333;
 }
+
