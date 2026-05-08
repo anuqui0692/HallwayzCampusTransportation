@@ -1416,9 +1416,3 @@ iframe {
   line-height: 1.6;
   color: #333;
 }
-
-.toggle-password {
-  cursor: pointer;
-  font-size: 18px;
-  margin-left: 10px;
-}
