@@ -850,13 +850,14 @@ iframe {
 
 /* TOP HEADER */
 .msg-header,
-.chat-header {
+.chat-header,
+.notification-header {
   width: 100%;
-  height: 85px;
-  background: #a8dc82;
+  height: 70px;
+  background: #2e7d32;
   display: flex;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 16px;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -866,10 +867,10 @@ iframe {
 .chat-header h2 {
   flex: 1;
   text-align: center;
-  font-size: 36px;
+  font-size: 28px;
   font-family: serif;
   color: white;
-  margin-right: 40px;
+  margin-right: 35px;
 }
 
 /* BACK BUTTON */
@@ -877,7 +878,7 @@ iframe {
 .chat-back-btn {
   border: none;
   background: transparent;
-  font-size: 30px;
+  font-size: 24px;
   color: white;
   cursor: pointer;
 }
