@@ -95,11 +95,6 @@ h1 {
   margin-top: 10px;
 }
 
-.logo {
-  width: 350px;
-  margin: 10px auto;
-}
-
 .btn:active {
   background-color: var(--green-color);
   color: white;
