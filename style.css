@@ -52,14 +52,9 @@ body {
 /* ================= LOGO ================= */
 .logo {
   width: 350px;
+  margin-bottom: 10px;
   height: auto;
   display: block;
-  position: relative;
-  top: -50px;
-}
-
-h1 {
-  margin-top: -10px;
 }
 
 /* ================= BUTTONS ================= */
