@@ -74,40 +74,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const signupSubmit = document.getElementById("signupSubmit");
   const loginSubmit = document.getElementById("loginSubmit");
 
-signupSubmit?.addEventListener("click", () => {
+  signupSubmit?.addEventListener("click", () => {
+    const username = document.getElementById("su_username")?.value.trim();
+    const email = document.getElementById("su_email")?.value.trim();
+    const password = document.getElementById("su_password")?.value.trim();
+    const phone = document.getElementById("su_phone")?.value.trim();
 
-  const username = document.getElementById("su_username")?.value.trim();
-  const email = document.getElementById("su_email")?.value.trim();
-  const password = document.getElementById("su_password")?.value.trim();
-  const phone = document.getElementById("su_phone")?.value.trim();
+    if (!username || !email || !password || !phone)
+      return alert("Please fill all fields.");
 
-  if (!username || !email || !password || !phone)
-    return alert("Please fill all fields.");
-
-  // SAVE PROFILE
-  const profileData = {
-    name: username,
-    username: username,
-    email: email,
-    password: password,
-    phone: phone
-  };
-
-  localStorage.setItem("profile", JSON.stringify(profileData));
-
-  pushNotification(
-    "Account Created",
-    "Welcome to Hallwayz!",
-    "system"
-  );
-
-  signupSubmit.innerHTML = "Redirecting...";
-
-  setTimeout(() => {
-    window.location.href = "map.html";
-  }, 800);
-
-});
+    signupSubmit.innerHTML = "Redirecting...";
+    setTimeout(() => (window.location.href = "map.html"), 800);
+  });
 
   loginSubmit?.addEventListener("click", () => {
     const username = document.getElementById("si_username")?.value.trim();
@@ -843,19 +821,4 @@ function deleteChat(event, index) {
 
 function goBack() {
   window.location.href = "message.html";
-}
-
-function togglePassword(inputId, icon) {
-
-  const input = document.getElementById(inputId);
-
-  if (!input) return;
-
-  if (input.type === "password") {
-    input.type = "text";
-    icon.innerHTML = "🙈";
-  } else {
-    input.type = "password";
-    icon.innerHTML = "👁️";
-  }
 }
