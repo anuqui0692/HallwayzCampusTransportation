@@ -228,7 +228,7 @@ function confirmRide() {
 
 function finishBooking() {
   document.querySelector(".done-btn")?.classList.add("active");
-  setTimeout(() => (window.location.href = "Thankyou.html"), 500);
+  setTimeout(() => (window.location.href = "thankyouu.html"), 500);
 }
 
 /* =========================================================
